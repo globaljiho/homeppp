@@ -43,9 +43,15 @@
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             display: flex;
+            flex-direction: column;
+            padding: 12px 5%;
+            gap: 10px;
+        }
+        .header-top {
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            width: 100%;
         }
         .logo {
             font-size: 1.15rem;
@@ -56,12 +62,21 @@
         nav {
             display: flex;
             gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+        nav::-webkit-scrollbar {
+            display: none;
         }
         nav a {
             font-size: 0.9rem;
             font-weight: 500;
             color: var(--text-color);
             transition: color 0.3s;
+            flex-shrink: 0;
         }
         nav a:hover {
             color: var(--primary-color);
@@ -76,6 +91,7 @@
             transition: opacity 0.3s;
             display: inline-block;
             text-align: center;
+            flex-shrink: 0;
         }
         .cta-btn:hover {
             opacity: 0.9;
@@ -89,7 +105,7 @@
         .hero {
             background: radial-gradient(circle at center, rgba(28, 37, 65, 0.8) 0%, rgba(7, 12, 27, 0.95) 100%);
             text-align: center;
-            padding-top: 140px;
+            padding-top: 160px;
             min-height: 85vh;
         }
         .hero span {
@@ -279,15 +295,27 @@
         footer p {
             margin-bottom: 6px;
         }
-        @media (max-width: 900px) {
+
+        @media (min-width: 901px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 5%;
+                gap: 0;
+            }
+            .header-top {
+                width: auto;
+            }
             nav {
-                display: none;
+                overflow-x: visible;
+                white-space: normal;
+                width: auto;
+                padding-bottom: 0;
+                gap: 25px;
             }
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-            section {
-                padding: 70px 5% 50px;
+            .hero {
+                padding-top: 140px;
             }
         }
     </style>
@@ -296,7 +324,10 @@
 
     <!-- 헤더 -->
     <header>
-        <div class="logo">글로벌 KLI 더탑</div>
+        <div class="header-top">
+            <div class="logo">글로벌 KLI 더탑</div>
+            <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">상담 신청</a>
+        </div>
         <nav>
             <a href="#why-us">Why? 더탑</a>
             <a href="#recruiting">리쿠르팅</a>
@@ -306,7 +337,6 @@
             <a href="#reviews">성과&후기</a>
             <a href="#faq">FAQ</a>
         </nav>
-        <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">상담 신청</a>
     </header>
 
     <!-- TOP 버튼 -->
