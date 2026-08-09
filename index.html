@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글로벌 KLI 더탑 - 보험 전문가 성장 플랫폼</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        section {
+            padding: 100px 5% 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 5%;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">글로벌 KLI 더탑</div>
+        <nav>
+            <a href="#why-us">왜 우리인가</a>
+            <a href="#recruiting">리쿠르팅</a>
+            <a href="#expert">전문가 양성</a>
+            <a href="#consulting">컨설팅</a>
+            <a href="#reviews">성과&후기</a>
+        </nav>
+        <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">상담 신청</a>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span>보험 전문가 성장 플랫폼</span>
+            <h1>리쿠르팅을 넘어,<br><strong>진짜 보험 전문가</strong>를 만듭니다</h1>
+            <p>가능성 있는 인재를 발굴하고, 제대로 교육하며, 지사를 세우고 운영할 수 있는 시스템을 갖췄습니다.</p>
+            <div>
+                <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">함께 성장할 파트너 지원하기</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <h2 class="section-title">4가지 핵심 축으로 성장을 설계합니다</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>01. 리쿠르팅</h3>
+                <p>숨겨진 고급 인재를 찾고 가능성을 현실로 만드는 영역입니다.</p>
+            </div>
+            <div class="card">
+                <h3>02. 전문가 양성</h3>
+                <p>보험, 재테크, 상속까지 연결되는 진짜 전문가를 키워냅니다.</p>
+            </div>
+            <div class="card">
+                <h3>03. 체계적 시스템</h3>
+                <p>혼자 버티는 구조가 아닌 지속적인 성과가 나는 시스템을 지원합니다.</p>
+            </div>
+            <div class="card">
+                <h3>04. 조직 확장</h3>
+                <p>영업을 넘어 조직의 리더이자 지사 대표로 성장할 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="recruiting" style="background-color: var(--bg-light);">
+        <h2 class="section-title">숨겨진 고급 인재를 찾습니다</h2>
+        <div class="grid-container">
+            <div class="card" style="background: var(--white);">
+                <h3>지원 대상</h3>
+                <p>• 더 큰 무대를 원하는 보험 설계사무소 및 영업인<br>• 컨설팅 역량을 키우고 싶은 전문 설계사<br>• 자기 지사를 꿈꾸는 조직 리더<br>• 자산관리 및 상속 설계까지 확장하고픈 분</p>
+            </div>
+            <div class="card" style="background: var(--white);">
+                <h3>성장 로드맵</h3>
+                <p><strong>STEP 1: 인재 발굴</strong> - 잠재력 및 시야 확인<br><strong>STEP 2: 전문가 교육</strong> - 통합 교육 시스템 이수<br><strong>STEP 3: 성과 창출</strong> - 실전 상담력 강화<br><strong>STEP 4: 조직 리더</strong> - 팀 빌딩 및 파트너 성장</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="expert">
+        <h2 class="section-title">고객의 인생 전체를 보는 전문가</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>보장 분석</h3>
+                <p>고객의 현재 구조를 면밀히 분석하고 부족한 보장을 진단합니다.</p>
+            </div>
+            <div class="card">
+                <h3>재무 및 재테크</h3>
+                <p>보험을 중심에 두고 투자, 저축, 연금 자산 흐름을 유기적으로 연결합니다.</p>
+            </div>
+            <div class="card">
+                <h3>상속 및 증여</h3>
+                <p>누진세가 적용되는 상속 구조를 파악하고 보험과 연계해 컨설팅합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" style="background-color: var(--bg-light);">
+        <h2 class="section-title">성과 & 후기</h2>
+        <div class="grid-container">
+            <div class="card" style="background: var(--white);">
+                <p>"처음엔 보험영업만 생각했는데, 자산 구조와 상속까지 함께 보는 전문가로 성장할 수 있었습니다."</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);">- 30대 설계사 K</p>
+            </div>
+            <div class="card" style="background: var(--white);">
+                <p>"체계적인 교육 시스템 덕분에 혼자 하던 영업에서 팀을 이끄는 리더로 성장했습니다."</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);">- 40대 팀장 P</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>글로벌 KLI 더탑</strong></p>
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">본 사이트는 보험 전문가 리쿠르팅 및 지사 성장 지원을 목적으로 운영됩니다.</p>
+        <p style="margin-top: 5px; font-size: 0.9rem; opacity: 0.8;">© 2026 글로벌 KLI 더탑. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
