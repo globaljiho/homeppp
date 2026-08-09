@@ -18,6 +18,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
             color: var(--text-color);
@@ -120,6 +123,30 @@
             margin-bottom: 15px;
             font-size: 1.25rem;
         }
+        .top-btn {
+            position: fixed;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 1001;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .top-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-50%) scale(1.05);
+        }
         footer {
             background: var(--primary-color);
             color: var(--white);
@@ -132,6 +159,12 @@
             }
             .hero h1 {
                 font-size: 2rem;
+            }
+            .top-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.8rem;
+                right: 15px;
             }
         }
     </style>
@@ -149,6 +182,8 @@
         </nav>
         <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">상담 신청</a>
     </header>
+
+    <a href="#" class="top-btn">TOP</a>
 
     <section class="hero">
         <div>
