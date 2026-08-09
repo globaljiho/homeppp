@@ -6,13 +6,14 @@
     <title>글로벌 KLI 더탑 - 보험 전문가 성장 플랫폼</title>
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #3182ce;
-            --text-color: #2d3748;
-            --bg-light: #f7fafc;
+            --primary-color: #d4af37; /* 고급스러운 골드 포인트 */
+            --bg-dark: #0b132b;
+            --bg-card: #1c2541;
+            --bg-card-light: #223055;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
             --white: #ffffff;
-            --border-color: #e2e8f0;
+            --border-color: rgba(212, 175, 55, 0.2);
         }
         * {
             margin: 0;
@@ -26,7 +27,8 @@
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
-            background-color: var(--white);
+            background: linear-gradient(135deg, #070c1b 0%, #0b132b 50%, #111d3b 100%);
+            background-attachment: fixed;
         }
         a {
             text-decoration: none;
@@ -37,8 +39,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: rgba(11, 19, 43, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -49,6 +52,7 @@
             font-size: 1.25rem;
             font-weight: bold;
             color: var(--primary-color);
+            letter-spacing: 1px;
         }
         nav {
             display: flex;
@@ -61,48 +65,71 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
         .cta-btn {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            color: #0b132b;
             padding: 10px 20px;
             border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s;
+            font-weight: bold;
+            transition: opacity 0.3s;
             display: inline-block;
             text-align: center;
         }
         .cta-btn:hover {
-            background-color: var(--secondary-color);
+            opacity: 0.9;
         }
         section {
-            padding: 100px 5% 80px;
+            padding: 120px 5% 90px;
             min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .hero {
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            background: radial-gradient(circle at center, rgba(28, 37, 65, 0.8) 0%, rgba(7, 12, 27, 0.95) 100%);
             text-align: center;
-            padding-top: 140px;
+            padding-top: 160px;
+        }
+        .hero span {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
         }
         .hero h1 {
             font-size: 2.8rem;
-            color: var(--primary-color);
+            color: var(--white);
             margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero h1 strong {
+            color: var(--primary-color);
         }
         .hero p {
             font-size: 1.2rem;
-            color: #4a5568;
+            color: var(--text-muted);
             margin-bottom: 30px;
         }
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--primary-color);
+            color: var(--white);
             margin-bottom: 50px;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
         }
         .grid-container {
             display: grid;
@@ -113,20 +140,24 @@
             width: 100%;
         }
         .card {
-            background: var(--bg-light);
+            background: var(--bg-card);
             padding: 40px 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s, border-color 0.3s;
             border: 1px solid var(--border-color);
         }
         .card:hover {
             transform: translateY(-5px);
+            border-color: var(--primary-color);
         }
         .card h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 1.35rem;
+        }
+        .card p {
+            color: var(--text-muted);
         }
         .office-grid {
             display: grid;
@@ -137,14 +168,15 @@
             width: 100%;
         }
         .office-box {
-            background: #e2e8f0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             height: 200px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #4a5568;
+            color: var(--text-muted);
             font-size: 1.1rem;
         }
         .faq-container {
@@ -156,7 +188,7 @@
             gap: 20px;
         }
         .faq-item {
-            background: var(--bg-light);
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 25px;
@@ -166,13 +198,16 @@
             font-size: 1.15rem;
             margin-bottom: 10px;
         }
+        .faq-item p {
+            color: var(--text-muted);
+        }
         .top-btn {
             position: fixed;
             right: 25px;
             top: 50%;
             transform: translateY(-50%);
-            background-color: var(--primary-color);
-            color: var(--white);
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            color: #0b132b;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -181,32 +216,34 @@
             justify-content: center;
             font-size: 0.9rem;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             z-index: 1001;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: transform 0.3s;
         }
         .top-btn:hover {
-            background-color: var(--secondary-color);
             transform: translateY(-50%) scale(1.05);
         }
         .contact-box {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #1c2541 0%, #111d3b 100%);
+            border: 1px solid var(--primary-color);
             color: var(--white);
             text-align: center;
             padding: 80px 20px;
             border-radius: 16px;
             max-width: 1000px;
             margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
         .contact-box h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
+            color: var(--white);
         }
         .contact-box p {
             font-size: 1.1rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: var(--text-muted);
         }
         .contact-actions {
             display: flex;
@@ -215,22 +252,23 @@
             flex-wrap: wrap;
         }
         .btn-light {
-            background-color: var(--white);
-            color: var(--primary-color);
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            color: #0b132b;
             padding: 12px 28px;
             border-radius: 6px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: opacity 0.3s;
         }
         .btn-light:hover {
-            background-color: #f7fafc;
+            opacity: 0.9;
         }
         footer {
-            background: #0f172a;
-            color: #94a3b8;
+            background: #050814;
+            color: var(--text-muted);
             text-align: center;
             padding: 50px 5%;
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
         }
         footer p {
             margin-bottom: 8px;
@@ -274,7 +312,7 @@
     <!-- 히어로 섹션 -->
     <section class="hero">
         <div>
-            <span>보험 전문가 성장 플랫폼</span>
+            <span>Insurance Expert Growth Platform</span>
             <h1>리쿠르팅을 넘어,<br><strong>진짜 보험 전문가</strong>를 만듭니다</h1>
             <p>가능성 있는 인재를 발굴하고, 제대로 교육하며, 본인의 성장을 사업화할 수 있습니다.</p>
             <div>
@@ -307,14 +345,14 @@
     </section>
 
     <!-- 리쿠르팅 섹션 -->
-    <section id="recruiting" style="background-color: var(--bg-light);">
+    <section id="recruiting" style="background: rgba(11, 19, 43, 0.5);">
         <h2 class="section-title">숨겨진 고급 인재를 찾습니다</h2>
         <div class="grid-container">
-            <div class="card" style="background: var(--white);">
+            <div class="card">
                 <h3>지원 대상</h3>
                 <p>• 더 큰 무대를 원하는 보험 설계사무소 및 영업인<br>• 전문 컨설팅 역량을 키우고 싶은 유능한 설계사<br>• 자기 지사를 꿈꾸는 비전 있는 조직 리더<br>• 자산관리 및 상속 설계까지 영역을 확장하고픈 분</p>
             </div>
-            <div class="card" style="background: var(--white);">
+            <div class="card">
                 <h3>성장 로드맵</h3>
                 <p><strong>STEP 1: 인재 발굴</strong> - 잠재력 및 시야 확인<br><strong>STEP 2: 전문가 교육</strong> - 통합 교육 시스템 이수<br><strong>STEP 3: 성과 창출</strong> - 실전 상담력 강화 및 고도화<br><strong>STEP 4: 조직 리더</strong> - 팀 빌딩 및 파트너 동반 성장</p>
             </div>
@@ -341,10 +379,10 @@
     </section>
 
     <!-- 컨설팅 섹션 -->
-    <section id="consulting" style="background-color: var(--bg-light);">
+    <section id="consulting" style="background: rgba(11, 19, 43, 0.5);">
         <h2 class="section-title">보험과 재테크, 그리고 상속까지</h2>
         <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 1.15rem; color: #4a5568; margin-bottom: 30px;">
+            <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px;">
                 보험은 따로, 재테크는 따로, 상속은 나중에 따로 보다가 결국 구조가 무너집니다.<br>
                 글로벌 KLI 더탑은 보장, 자산, 세금, 가족 구조를 함께 보고 현실적인 대안을 제시합니다.
             </p>
@@ -355,7 +393,7 @@
     <!-- 사무실 소개 섹션 -->
     <section id="office">
         <h2 class="section-title">최고의 몰입과 성장을 위한 공간</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: #4a5568;">언제든 쾌적하게 업무에 집중하고 고객과 소통할 수 있는 프리미엄 공간입니다.</p>
+        <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">언제든 쾌적하게 업무에 집중하고 고객과 소통할 수 있는 프리미엄 공간입니다.</p>
         <div class="office-grid">
             <div class="office-box">오피스 전경 1</div>
             <div class="office-box">상담실 & 회의실</div>
@@ -365,15 +403,15 @@
     </section>
 
     <!-- 성과 & 후기 섹션 -->
-    <section id="reviews" style="background-color: var(--bg-light);">
+    <section id="reviews" style="background: rgba(11, 19, 43, 0.5);">
         <h2 class="section-title">성과 & 후기</h2>
         <div class="grid-container">
-            <div class="card" style="background: var(--white);">
-                <p>"처음엔 보험영업만 생각했는데, 자산 구조와 상속까지 함께 보는 전문가로 성장할 수 있었습니다. 시스템의 힘을 실감합니다."</p>
+            <div class="card">
+                <p style="color: var(--text-muted);">"처음엔 보험영업만 생각했는데, 자산 구조와 상속까지 함께 보는 전문가로 성장할 수 있었습니다. 시스템의 힘을 실감합니다."</p>
                 <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);">- 30대 설계사 K (전문가 양성 과정 수료)</p>
             </div>
-            <div class="card" style="background: var(--white);">
-                <p>"체계적인 교육 시스템 덕분에 혼자 하던 영업에서 팀을 이끄는 리더로 성장했습니다. 막연했던 내 지사 운영의 꿈이 현실이 되었어요."</p>
+            <div class="card">
+                <p style="color: var(--text-muted);">"체계적인 교육 시스템 덕분에 혼자 하던 영업에서 팀을 이끄는 리더로 성장했습니다. 막연했던 내 지사 운영의 꿈이 현실이 되었어요."</p>
                 <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);">- 40대 팀장 P (리더십 과정 교육 중)</p>
             </div>
         </div>
@@ -399,7 +437,7 @@
     </section>
 
     <!-- 상세 상담 및 지원 섹션 -->
-    <section style="background-color: var(--bg-light); min-height: auto; padding: 60px 5%;">
+    <section style="background: rgba(11, 19, 43, 0.5); min-height: auto; padding: 60px 5%;">
         <div class="contact-box">
             <h2>가능성은 숨겨져 있을 뿐, 없는 게 아닙니다</h2>
             <p>더 큰 무대, 확실한 시스템, 그리고 진정한 전문가로 도약하고 싶다면 지금 바로 대화를 시작해보세요.</p>
