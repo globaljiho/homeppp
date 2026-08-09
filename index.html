@@ -83,7 +83,6 @@
             opacity: 1;
             transition: opacity 0.3s ease;
         }
-        /* 스크롤이 맨 끝에 도달했을 때 꺾쇠 숨김 */
         .nav-wrapper.at-end::after {
             opacity: 0;
         }
@@ -130,6 +129,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            /* 네비게이션에 가리지 않도록 상단 여유 공간 확보 */
+            scroll-margin-top: 80px; 
         }
         .hero {
             background: radial-gradient(circle at center, rgba(28, 37, 65, 0.8) 0%, rgba(7, 12, 27, 0.95) 100%);
@@ -532,7 +533,6 @@
 
         function checkScrollEnd() {
             if (!navScroll || !navWrapper) return;
-            // 스크롤이 맨 끝에 도달했는지 확인 (오차 범위 5px 허용)
             const isEnd = navScroll.scrollLeft + navScroll.clientWidth >= navScroll.scrollWidth - 5;
             if (isEnd) {
                 navWrapper.classList.add('at-end');
@@ -543,7 +543,6 @@
 
         navScroll.addEventListener('scroll', checkScrollEnd);
         window.addEventListener('resize', checkScrollEnd);
-        // 초기 로딩 시 체크
         window.addEventListener('DOMContentLoaded', checkScrollEnd);
     </script>
 
