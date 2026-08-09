@@ -59,6 +59,28 @@
             color: var(--primary-color);
             letter-spacing: 1px;
         }
+        .nav-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .nav-wrapper::after {
+            content: '›';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: bold;
+            pointer-events: none;
+            width: 30px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(to right, rgba(11,19,43,0), rgba(11,19,43,0.9) 70%);
+            padding-right: 2px;
+        }
         nav {
             display: flex;
             gap: 20px;
@@ -66,6 +88,7 @@
             white-space: nowrap;
             width: 100%;
             padding-bottom: 4px;
+            padding-right: 25px;
             scrollbar-width: none;
         }
         nav::-webkit-scrollbar {
@@ -307,11 +330,18 @@
             .header-top {
                 width: auto;
             }
+            .nav-wrapper::after {
+                display: none;
+            }
+            .nav-wrapper {
+                width: auto;
+            }
             nav {
                 overflow-x: visible;
                 white-space: normal;
                 width: auto;
                 padding-bottom: 0;
+                padding-right: 0;
                 gap: 25px;
             }
             .hero {
@@ -328,15 +358,17 @@
             <div class="logo">글로벌 KLI 더탑</div>
             <a href="https://open.kakao.com/o/sfvimZHi" target="_blank" class="cta-btn">상담 신청</a>
         </div>
-        <nav>
-            <a href="#why-us">Why? 더탑</a>
-            <a href="#recruiting">리쿠르팅</a>
-            <a href="#expert">전문가 양성</a>
-            <a href="#consulting">컨설팅</a>
-            <a href="#office">사무실 소개</a>
-            <a href="#reviews">성과&후기</a>
-            <a href="#faq">FAQ</a>
-        </nav>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="#why-us">Why? 더탑</a>
+                <a href="#recruiting">리쿠르팅</a>
+                <a href="#expert">전문가 양성</a>
+                <a href="#consulting">컨설팅</a>
+                <a href="#office">사무실 소개</a>
+                <a href="#reviews">성과&후기</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
     </header>
 
     <!-- TOP 버튼 -->
