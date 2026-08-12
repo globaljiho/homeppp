@@ -110,7 +110,6 @@
         nav a:hover {
             color: var(--primary-color);
         }
-        /* 스크롤 위치에 따라 활성화된 네비게이션 스타일 */
         nav a.active {
             color: var(--primary-color);
             font-weight: 700;
@@ -234,6 +233,12 @@
             font-weight: bold;
             color: var(--text-muted);
             font-size: 1rem;
+            overflow: hidden;
+        }
+        .office-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .faq-container {
             max-width: 900px;
@@ -477,10 +482,10 @@
         <h2 class="section-title">최고의 몰입과 성장을 위한 공간</h2>
         <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">언제든 쾌적하게 업무에 집중하고 고객과 소통할 수 있는 프리미엄 공간입니다.</p>
         <div class="office-grid">
-            <div class="office-box">오피스 전경 1</div>
-            <div class="office-box">상담실 & 회의실</div>
-            <div class="office-box">라운지 공간</div>
-            <div class="office-box">교육 및 세미나실</div>
+            <div class="office-box"><img src="office1.jpg" alt="오피스 전경 1"></div>
+            <div class="office-box"><img src="office2.jpg" alt="상담실 & 회의실"></div>
+            <div class="office-box"><img src="office3.jpg" alt="라운지 공간"></div>
+            <div class="office-box"><img src="office4.jpg" alt="교육 및 세미나실"></div>
         </div>
     </section>
 
@@ -555,7 +560,6 @@
         window.addEventListener('resize', checkScrollEnd);
         window.addEventListener('DOMContentLoaded', checkScrollEnd);
 
-        // 스크롤 위치에 따른 네비게이션 활성화(Scrollspy)
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('nav a');
 
