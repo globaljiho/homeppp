@@ -216,29 +216,36 @@
         }
         .office-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
-        .office-box {
+        .office-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            height: 160px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--text-muted);
-            font-size: 1rem;
-            overflow: hidden;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
         }
-        .office-box img {
+        .office-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        .office-card img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .office-card p {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 600;
         }
         .faq-container {
             max-width: 900px;
@@ -482,10 +489,22 @@
         <h2 class="section-title">최고의 몰입과 성장을 위한 공간</h2>
         <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">언제든 쾌적하게 업무에 집중하고 고객과 소통할 수 있는 프리미엄 공간입니다.</p>
         <div class="office-grid">
-            <div class="office-box"><img src="office1.jpg" alt="오피스 전경 1"></div>
-            <div class="office-box"><img src="office2.jpg" alt="상담실 & 회의실"></div>
-            <div class="office-box"><img src="office3.jpg" alt="라운지 공간"></div>
-            <div class="office-box"><img src="office4.jpg" alt="교육 및 세미나실"></div>
+            <div class="office-card">
+                <img src="images/office1.jpeg" alt="오피스 전경">
+                <p>오피스 전경</p>
+            </div>
+            <div class="office-card">
+                <img src="images/office2.jpeg" alt="상담실 & 회의실">
+                <p>상담실 & 회의실</p>
+            </div>
+            <div class="office-card">
+                <img src="images/office3.jpeg" alt="라운지 공간">
+                <p>라운지 공간</p>
+            </div>
+            <div class="office-card">
+                <img src="images/office4.jpeg" alt="교육 및 세미나실">
+                <p>교육 및 세미나실</p>
+            </div>
         </div>
     </section>
 
@@ -560,6 +579,7 @@
         window.addEventListener('resize', checkScrollEnd);
         window.addEventListener('DOMContentLoaded', checkScrollEnd);
 
+        // 스크롤 위치에 따른 네비게이션 활성화(Scrollspy)
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('nav a');
 
