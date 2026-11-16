@@ -400,7 +400,7 @@
     <a href="#" class="top-btn">TOP</a>
 
     <!-- 히어로 섹션 -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div>
             <span>Insurance Expert Growth Platform</span>
             <h1>리쿠르팅을 넘어,<br><strong>진짜 보험 전문가<br></strong>
@@ -484,7 +484,7 @@
         </div>
     </section>
 
-<!-- 사무실 소개 섹션 -->
+    <!-- 사무실 소개 섹션 -->
     <section id="office">
         <h2 class="section-title">최고의 몰입과 성장을 위한 공간</h2>
         <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">언제든 쾌적하게 업무에 집중하고 고객과 소통할 수 있는 프리미엄 공간입니다.</p>
@@ -562,6 +562,16 @@
     </footer>
 
     <script>
+        // 페이지 새로고침 및 첫 접속 시 무조건 최상단 메인화면으로 이동
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', function() {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
+        });
+
         const navScroll = document.getElementById('navScroll');
         const navWrapper = document.getElementById('navWrapper');
 
@@ -591,7 +601,9 @@
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${id}`) {
                             link.classList.add('active');
-                            link.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+                            // 전체 화면 스크롤에 영향을 주지 않고 메뉴바 가로 스크롤만 이동
+                            const targetLeft = link.offsetLeft - (navScroll.clientWidth / 2) + (link.clientWidth / 2);
+                            navScroll.scrollTo({ left: targetLeft, behavior: 'smooth' });
                         }
                     });
                 }
